@@ -10,20 +10,44 @@ function addComment(username, comment, addToStart) {
 }
 
 /* Task 2 - Create your showWinnerMessage below according to the TODO */
+function showWinnerMessage(message) {
+  const winnerDisplay = document.getElementById("winner-display");
+  winnerDisplay.innerHTML = message;
+}
 
 /* Task 3 - Create your pickWinner below according to the TODO */
+function pickWinner() {
+  const randomIndex = Math.floor(Math.random() * comments.length);
+  const winningEntry = comments[randomIndex];
+  showRandomEmoji();
+  const winnerMessage = `Winner: <strong class="text-success">${winningEntry}</strong>`;
+  showWinnerMessage(winnerMessage);
+}
 
 /* Task 4 - Complete the function according to the TODO */
-function showRandomEmoji() {}
+function showRandomEmoji() {
+  const emojiDisplay = document.getElementById("winner-emoji");
+  const randomIndex = Math.floor(Math.random() * emojis.length);
+  const randomEmoji = emojis[randomIndex];
+  emojiDisplay.innerHTML = randomEmoji;
+}
 
 /* Task 5 - Complete the function according to the TODO */
-function reverseOrder() {}
+function reverseOrder() {
+  comments.reverse();
+}
 
 /* Task 6 - Complete the function according to the TODO */
-function removeComment(index) {}
+function removeComment(index) {
+  if (index >= 0 && index < comments.length) {
+    comments.splice(index, 1);
+  }
+}
 
 /* Task 7 - Complete the function according to the TODO */
-function filterEmojiComments() {}
+function filterEmojiComments() {
+  
+}
 
 /* Level Ups */
 
